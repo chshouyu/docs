@@ -39,7 +39,7 @@ git config --global alias.<alias name> <real command>
 
 ## Git基本的工作流程
 
-新的工作目录 --> `git init` --> `git add -- file` --> `git commit -m 'commit content'`
+新的工作目录 --> `git init` --> `git add <files>` --> `git commit -m 'commit content'`
 
 ### 详解
 
@@ -49,7 +49,7 @@ git config --global alias.<alias name> <real command>
 
 如果删除.git目录，将会使工作区变为一个普通文件夹，如果没有远程版本库，将会丢掉所有历史提交纪录！
 
-#### `git add -- file`
+#### `git add <files>`
 
 将文件加入到暂存区
 
