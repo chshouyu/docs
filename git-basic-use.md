@@ -77,7 +77,6 @@ git config --global alias.<alias name> <real command>
 
 以name为名，以指定的`commit id`为基准新建一个分支，如省略`commit id`则以当前状态新建分支。
 
-
 > 注意：新建分支后并不会切换到新的分支，需要手动切换分支，命令为：
 `git checkout <branch name>`
 
@@ -90,10 +89,84 @@ git config --global alias.<alias name> <real command>
 
 删除分支
 
+## 分支、HEAD理解
+
+……
+
+## 历史穿梭
+
+```
+git reset <--soft|--mixed|--hard> <commit id>
+```
+
+将引用重置到某一次提交
+
+### 选项解析
+
+#### `--soft`
+
+重置分支的引用（指向），但不更改暂存区和工作区
+
+#### `--mixed（默认）`
+
+重置分支的引用（指向），并用指定提交的内容覆盖暂存区，不修改工作区
+
+#### `--hard`
+
+重置分支的引用（指向），并用指定提交的内容覆盖暂存区和工作区
+
 ## Git常用命令
 
-### `git status`
+### `git status <-s>`
 
-查看工作区当前状态
+查看工作区当前状态，-s则以精简方式查看
+
+### `git log <--oneline|--decorate|--graph|-p>`
+
+查看提交历史纪录
+
+### 选项解析
+
+#### `--oneline`
+
+单行模式
+
+#### `--decorate`
+
+显示引用
+
+#### `--graph`
+
+以图形方式查看
+
+#### `-p`
+
+显示每次的修改摘要
+
+### `git diff -- <file path>`
+
+由于一个项目存在工作区、暂存区、版本库三种状态，所以`git diff`也分如下几种情况：
+
+#### 工作区与暂存区比较
+
+```
+git diff
+```
+
+#### 暂存区与版本库比较
+
+```
+git diff --cached
+```
+
+#### 工作区与版本库比较
+
+```
+git diff HEAD
+```
+
+
+
+
 
 
