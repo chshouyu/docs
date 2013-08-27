@@ -1,5 +1,3 @@
-# Git
-
 ![git](http://git-scm.com/images/logo@2x.png)
 
 ## Git基本配置
