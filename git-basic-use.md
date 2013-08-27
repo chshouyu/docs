@@ -1,5 +1,7 @@
 # Git
 
+![git](http://git-scm.com/images/logo@2x.png)
+
 ## Git基本配置
 
 ### 用户名、邮箱（首要）
@@ -373,7 +375,9 @@ git rm --cached <file name>
 
 参考自[一个成功的Git分支模型](http://www.juvenxu.com/2010/11/28/a-successful-git-branching-model/)
 
+图示：
 
+![git](http://www.juvenxu.com/wp-content/uploads/2010/11/git-branch-1.png)
 
 
 
