@@ -290,6 +290,10 @@ git merge <branch name> --no-ff
 
 ### 常用命令
 
+#### `git remote add <source name> <source url>`
+
+添加一个远程版本库
+
 #### `git push <-u> <source name> <branch name>`
 
 将本地提交推送到远程版本库，可以指定远程版本库名与分支名。`-u`参数会使得本地分支建立与远程分支的对应关系，以后可以直接执行`git push`即可同步。
@@ -302,7 +306,7 @@ git merge <branch name> --no-ff
 
 #### `git pull <source name> <branch name>`
 
-拉取远程版本库的更新并合并到当前的本地分支中
+拉取远程版本库的更新并合并到当前的本地分支中，相当于执行了`git fetch` + `git merge`
 
 #### `git push  :<branch name>`
 
@@ -310,7 +314,7 @@ git merge <branch name> --no-ff
 
 ### 标签与分支的操作类似
 
-将上文中的<branch name>改为<tag name>即可
+将上文中的`<branch name>`改为`<tag name>`即可
 
 ## Git常见问答
 
@@ -320,7 +324,7 @@ git merge <branch name> --no-ff
 git log -n
 ```
 
-### 2. 刚修改了一些东西，但想放弃修改，怎么办？
+### 2. 刚修改了一些东西或者误删了文件，但想放弃修改，怎么办？
 
 ```
 git checkout -- <file name>
