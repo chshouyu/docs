@@ -209,9 +209,13 @@ git diff HEAD
 
 #### 其他
 
-#### `git reset <commit id> -- file`
+#### `git reset HEAD -- file`
 
 用最新提交中的文件覆盖暂存区中的文件，相当于执行了`git add`的反向操作
+
+#### `git reset <commit id> -- file`
+
+用指定提交中的文件覆盖暂存区中的文件
 
 #### `git reset --soft HEAD^`
 
