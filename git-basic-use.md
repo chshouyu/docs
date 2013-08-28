@@ -251,7 +251,7 @@ git checkout <commit id>
 
 合并分支
 
-首先，切换到要合并到的分支，然后执行`git merge <branch name>`就会把名为<branch name>的分支合并到当前所在的分支
+首先，切换到要合并到的分支，然后执行`git merge <branch name>`就会把名为`<branch name>`的分支合并到当前所在的分支
 
 例如：
 要把一个特性分支ptb合并到主分支master，则先切换到master分支，执行`git merge ptb`，就会把ptb分支的提交合并到master中
