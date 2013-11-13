@@ -48,6 +48,15 @@ git config --gloabl color.ui true
 
 以彩色文字显示（需终端支持）
 
+### 设置push默认方式
+
+git默认是将所有分支全部push到远程，这一般不是我们的意愿，可以修改默认设置
+
+```
+git config --global push.default simple (git 1.8(含)以上)
+git config --global push.default tracking (git 1.8以下)
+```
+
 > 所有配置选项可以用`git config -e --global`方式打开进行编辑。实际上编辑的是`~/.gitconfig`文件。
 
 ## Git基本的工作流程
