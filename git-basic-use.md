@@ -59,6 +59,25 @@ git config --global push.default tracking (git 1.8以下)
 
 > 所有配置选项可以用`git config -e --global`方式打开进行编辑。实际上编辑的是`~/.gitconfig`文件。
 
+### 设置命令提示
+
+#### 配置
+
+下载git源代码里的git提示脚本
+
+```
+cd ~
+wget https://raw2.github.com/git/git/master/contrib/completion/git-completion.bash
+mv git-completion.bash ~/.git-completion.bash
+```
+
+添加`source ~/.git-completion.bash`这一句到`~/.bashrc`中，新开一个回话即可生效
+
+#### 使用
+
+键入部分git命令后，按两次`tab`可以看到提示信息，支持参数、分支名等提示
+
+
 ## Git基本的工作流程
 
 新的工作目录 --> `git init` --> `git add <files>` --> `git commit -m 'commit content'`
