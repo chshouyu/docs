@@ -136,3 +136,33 @@ $("#test").click($.proxy(obj, "test"));
 ```js
 $("#test").click($.proxy(obj.test, obj));
 ```
+
+#### 实现
+
+```js
+var bind = function(func, obj) {
+  return function() {
+    func.apply(obj, arguments);
+  };
+};
+```
+
+### $.contains
+
+一个DOM节点是否包含另一个DOM节点。
+
+```js
+$.contains(document.documentElement, document.body); // true
+$.contains(document.body, document.documentElement); // false
+```
+
+### $.isWindow
+
+测试对象是否是窗口（有可能是Frame）。
+
+### $.type(obj)
+
+检测obj的数据类型。
+
+
+
