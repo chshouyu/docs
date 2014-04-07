@@ -47,3 +47,65 @@ while (r = reg.exec(url)) {
 // result: [{key: 'name', value: 'chen'}, {key: 'age', value: 25}, {key: 'test', value: ''}]
 
 ```
+
+## 技巧
+
+### 快速得到标准的时间格式
+
+```js
+var getTime = function(date) {
+    var date = date || new Date(),
+        year = date.getFullYear(),
+        month = date.getMonth() + 1,
+        day = date.getDate(),
+        hour = date.getHours(),
+        min = date.getMinutes(),
+        sec = date.getSeconds();
+    return (year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec).replace(/([\-\/:\s])(\d)(?!\d)/g, '$10$2');
+};
+
+// "2014-4-7 14:3:44"  --> "2014-04-07 14:03:44"
+```
+
+#### 解析
+
+`/([\-\/:\s])(\d)(?!\d)/g`为寻找以`-`,`:`,`/`开头的单个数字，然后替换成以0开头的组合
+
+### 得到一个数组的随机副本
+
+```js
+var arr = [1, 2, 6, 5, 8, 10, 22, 'hello'];
+```
+
+#### 方法1：
+
+```js
+var getRandomArray = function(array, length) {
+    var length = length || array.length;
+    array.sort(function() {
+        return Math.random() - 0.5;    
+    });
+    return array.slice(0, length);
+};
+```
+
+#### 方法2：
+
+```js
+var getRandomArray = function(array, length) {
+    var length = length || array.length,
+        newArr = [],
+        randomIndex,
+        removed;
+    array.forEach(function(elem, index) {
+        randomIndex = Math.floor(Math.random() * index);
+        removed = newArr.splice(randomIndex, 1, elem);
+        removed.length && newArr.push(removed[0]);
+    });
+    return newArr.slice(0, length);
+};
+```
+
+#### 方法3：
+
+underscore的实现方法，交换随机索引
