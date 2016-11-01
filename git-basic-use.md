@@ -38,7 +38,15 @@ git config --global core.autocrlf true
 git config --global alias.<alias name> <real command>
 ```
 
-示例：`git config --global alias.st status`
+常用的alias设置
+
+```
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.sh status
+git config --global alias.br branch
+git config --global alias.ci commit
+```
 
 ### 配色
 
